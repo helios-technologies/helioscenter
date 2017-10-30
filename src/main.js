@@ -6,6 +6,14 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+import Video from '@/components/Video'
+import Intro from '@/components/Intro'
+import Perks from '@/components/Perks'
+
+Vue.component('Video', Video)
+Vue.component('Intro', Intro)
+Vue.component('Perks', Perks)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
