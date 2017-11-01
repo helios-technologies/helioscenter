@@ -1,4 +1,3 @@
-'use strict'
 const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
@@ -10,7 +9,8 @@ function resolve (dir) {
 
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: './src/main.js',
+    vendor: ['bootstrap', 'jquery', 'tether']
   },
   output: {
     path: config.build.assetsRoot,
@@ -46,6 +46,14 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')]
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-loader',
+        include: [resolve('src/views')],
+        options: {
+          interpolate: true
+        }
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
