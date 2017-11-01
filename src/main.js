@@ -3,12 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
-Vue.config.productionTip = false
+import 'bootstrap'
 
 import Video from '@/components/Video'
 import Intro from '@/components/Intro'
 import Perks from '@/components/Perks'
+
+Vue.config.productionTip = false
 
 Vue.component('Video', Video)
 Vue.component('Intro', Intro)
